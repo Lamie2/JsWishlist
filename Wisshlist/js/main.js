@@ -25,15 +25,27 @@ if(wishCount)
         })
     }
 
-    let searchInput= document.querySelector('.data-search')
-searchInput.addEventListener('input', function(e){
-    const value=e.target.value.toLowerCase()
-    data.products.forEach(el=> {
-        const isVisible= el.name.toLowerCase().includes(value)  || el.description.includes()
-        el.element.classList.toggle("hide", isVisible)
+    fetch(`https://dummyjson.com/products/search?q=inputValue`)
+    .then(response=> response.json())
+    .then(data => {
+        let itemsBox= document.getElementById('items')
+        data.products.forEach(element=> {
+            let li = document.createElement('li');
+           
+        })
+    
+    })
+        let searchInput= document.querySelector('[data-search]')
+    searchInput.addEventListener('input', function(e){
+        const value=e.target.value.toLowerCase()
+        console.log(value)
+        data.products.forEach(el=> {
+            const isVisible= el.name.toLowerCase().includes(value)  || el.description.includes()
+            el.element.classList.toggle("hide", isVisible)
+        })
+    
     })
 
-})
 
 function loadProducts(page) {
     fetch(`https://dummyjson.com/products?skip=${(page - 1) * 10}&limit=10`)
