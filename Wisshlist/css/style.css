@@ -1,0 +1,20 @@
+img {
+  height: 250px;
+}
+
+.wish-box {
+  position: relative;
+}
+
+.wish-box span {
+  right: -8px;
+  position: absolute;
+  top: -12px;
+}
+
+.wish-box i {
+  font-size: 25px;
+  margin-left: 10px;
+  color: red;
+}
+/*# sourceMappingURL=style.css.map */
